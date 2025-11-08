@@ -1,0 +1,9 @@
+feat: add Spotify OAuth flow
+fix: resolve login token bug
+docs: update setup guide
+style: apply Tailwind theme tokens
+refactor: simplify AuthContext
+chore: bump React version
+
+git checkout -b feature/auth-integration
+# work → commit → push → PR into dev

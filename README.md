@@ -1,24 +1,43 @@
-# 🎵 MuseJournal
+# 🎵 **MuseJournal**  
+*Your mood, your music, your story.*
 
-MuseJournal is a full-stack web app that combines **music** and **mood journaling**.  
-It connects with the **Spotify Web API** so users can log in, view their playlists, and reflect on how their music matches their mood.
-
-> Your mood, your music — your story.
-
----
-
-## ✨ Features
-- 🔐 Login with Spotify (via Firebase Authentication)
-- 🎧 View playlists, top tracks, and recent music
-- 📓 Save “mood entries” linked to specific songs
-- 💾 Store data using Neon PostgreSQL
-- 🎨 Built with React + Tailwind CSS
-- ⚙️ Backend powered by Spring Boot and deployed on Render
-- 🚀 Frontend deployed on Vercel
+MuseJournal is a full-stack web application that transforms your **Spotify activity** into a **mood-based journaling experience**.  
+Track how you feel, discover insights from your music, and reflect through a calming, minimalist interface.
 
 ---
 
-## 🧠 Tech Stack
+## ✨ **Features**
+
+### 🌿 Core Experience  
+- **🎧 Spotify Integration** — Fetch your top songs, artists, genres & listening patterns  
+- **📓 Mood Journal** — Log entries, moods, and attach the song you're listening to  
+- **📊 Insights Dashboard** — Weekly mood trends, top artists, genres & activity summaries  
+- **💬 Daily Quote Generator** — Get a gentle inspirational or reflective quote each day  
+- **🎶 Music Library** — Explore your tracks with mood filters (Happy, Chill, Moody, etc.)  
+
+### 🌈 Personalization  
+- **🖼️ Light / Dark mode**  
+- **🎨 Accent color customization**  
+- **🧩 Clean UI with reusable components (React + Tailwind)**  
+
+### ⚙️ Account  
+- **🔐 Log in / Sign up**  
+- **🔗 Connect & disconnect Spotify**  
+- **👤 Edit profile & change password**  
+
+### 📦 App Pages  
+- Dashboard  
+- Journal  
+- Music Library  
+- Insights  
+- Daily Quote  
+- Settings  
+- Log In / Sign Up  
+- **404 Page**
+
+---
+
+## 🧠 **Tech Stack**
 
 | Layer | Tools |
 |-------|-------|
@@ -27,8 +46,8 @@ It connects with the **Spotify Web API** so users can log in, view their playlis
 | **Database** | Neon PostgreSQL |
 | **Auth** | Firebase Authentication |
 | **API Integration** | Spotify Web API |
-| **Deployment** | Vercel · Render |
-| **Docs & Design** | Figma · draw.io · Notion |
+| **Deployment** | Vercel (frontend) · Render (backend) |
+| **Design** | Figma · draw.io / diagrams.net |
 
 ---
 

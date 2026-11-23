@@ -1,10 +1,10 @@
-# MuseJournal 🎧
+# MuseJournal 
 
 > Your life, told through music.
 
 MuseJournal is a private music journal. Write a memory, tag how you felt, attach the song that goes with it, and rediscover those moments later through an "On this day" view and insights about your moods and music.
 
-**Status:** 🚧 In active development. Follow progress on the [project board](../../projects) and [milestones](../../milestones).
+**Status:** In active development.
 
 <!-- Live demo link and "Try the demo" GIF go here once deployed (M0 / M6). -->
 

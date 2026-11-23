@@ -1,0 +1,27 @@
+name: Feature / task
+description: A piece of work to build
+labels: ["type:feature"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should be true when this is done, and why does it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      value: |
+        - [ ]
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ]
+  - type: input
+    id: estimate
+    attributes:
+      label: Estimate (hours)

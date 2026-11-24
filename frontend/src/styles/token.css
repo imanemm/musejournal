@@ -1,0 +1,63 @@
+
+/* ---------- Raw palette (from the Figma style guide) ---------- */
+:root {
+  --mj-navy: #00284c;
+  --mj-mint: #a0e8c5;
+  --mj-gray: #ededed;
+  --mj-white: #ffffff;
+  --mj-blue: #055197;
+}
+
+/* ---------- Semantic colours: LIGHT ---------- */
+.dark .card,
+.dark .card-primary {
+  --bg: #f4fbf7;                       
+  --surface: var(--mj-gray);          
+  --surface-muted: var(--mj-white);    
+  --text: var(--mj-navy);
+  --text-muted: #5b6b7f;               
+  --border: #dcdcdc;                  
+  --card-border: var(--mj-gray);      
+  --danger: #b42318;                   
+
+  /* Brand gradient is dark-mode only; in light mode these classes paint the flat page colour */
+  --gradient-from: var(--bg);
+  --gradient-to: var(--bg);
+  --on-gradient: var(--mj-navy);
+  --on-gradient-muted: var(--text-muted);
+
+  --primary: var(--mj-mint);           
+  --on-primary: var(--mj-navy);
+
+  --strong: var(--mj-navy);           
+  --on-strong: var(--mj-mint);
+
+  --accent: var(--mj-blue);            
+  --on-accent: var(--mj-white);
+}
+
+/* ---------- Semantic colours: DARK ---------- */
+.dark {
+  --bg: #001a33;                      
+  --surface: var(--mj-gray);           
+  --surface-muted: #0b3a66;            
+  --text: var(--mj-gray);
+  --text-muted: #9fb3c8;
+  --border: #1e4a75;
+  --card-border: var(--mj-gray);
+  --danger: #ff8a80;
+
+  --gradient-from: var(--mj-navy);     
+  --gradient-to: var(--mj-blue);
+  --on-gradient: var(--mj-white);
+  --on-gradient-muted: #c7d6e6;
+
+  --primary: var(--mj-mint);
+  --on-primary: var(--mj-navy);
+
+  --strong: var(--mj-blue);            
+  --on-strong: var(--mj-white);
+
+  --accent: #6ba8e5;                   
+  --on-accent: var(--mj-navy);
+}

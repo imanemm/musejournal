@@ -1,111 +1,138 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "./tokens.css";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/* Dark mode toggles with a `dark` class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ---------- Tailwind theme ---------- */
+@theme inline {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+  /* bg-bg, bg-surface, text-text, text-on-primary, border-border, ring-accent… */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-card-border: var(--card-border);
+  --color-danger: var(--danger);
+  --color-on-gradient: var(--on-gradient);
+  --color-on-gradient-muted: var(--on-gradient-muted);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-strong: var(--strong);
+  --color-on-strong: var(--on-strong);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+
+  /* Fixed brand colours for things that shouldn't flip (e.g. the logo) */
+  --color-brand-navy: var(--mj-navy);
+  --color-brand-mint: var(--mj-mint);
+  --color-brand-blue: var(--mj-blue);
+
+  /* rounded-button, rounded-card */
+  --radius-button: 15px;
+  --radius-card: 20px;
+
+  /* text-h1 … text-h5, text-body */
+  --text-h1: 36px;
+  --text-h1--line-height: 1.2;
+  --text-h1--font-weight: 600;
+  --text-h2: 24px;
+  --text-h2--line-height: 1.3;
+  --text-h2--font-weight: 600;
+  --text-h3: 20px;
+  --text-h3--line-height: 1.4;
+  --text-h3--font-weight: 500;
+  --text-h4: 16px;
+  --text-h4--line-height: 1.5;
+  --text-h4--font-weight: 400;
+  --text-h5: 14px;
+  --text-h5--line-height: 1.5;
+  --text-h5--font-weight: 400;
+  --text-body: 16px;
+  --text-body--line-height: 1.6;
+}
+
+/* ---------- Brand gradient ----------
+   bg-brand-gradient  → sidebar (fills its own height)
+   bg-page-gradient   → full pages: marketing, auth, 404, onboarding
+                        (stays put while content scrolls, never tiles) */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(to bottom, var(--gradient-from), var(--gradient-to));
+  color: var(--on-gradient);
+}
+@utility bg-page-gradient {
+  min-height: 100dvh;
+  background-color: var(--gradient-from);
+  background-image: linear-gradient(to bottom, var(--gradient-from), var(--gradient-to));
+  background-attachment: fixed;
+  color: var(--on-gradient);
+}
+
+/* ---------- Building blocks ---------- */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-button px-6 py-2.5
+         text-body font-medium transition-colors
+         disabled:cursor-not-allowed disabled:opacity-40;
+}
+@utility chip {
+  @apply inline-flex items-center rounded-button px-3 py-1 text-h5 font-medium;
+}
+@utility input {
+  @apply w-full rounded-button px-4 py-3 text-body transition-colors
+         placeholder:text-text-muted
+         disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-bg font-sans text-body text-text antialiased;
+  }
+  h1 { @apply text-h1; }
+  h2 { @apply text-h2; }
+  h3 { @apply text-h3; }
+  h4 { @apply text-h4; }
+  h5 { @apply text-h5; }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* ---------- Components from the style guide ---------- */
+@layer components {
+  /* Buttons */
+  .btn-primary { @apply btn bg-primary text-on-primary hover:brightness-95; }
+  .btn-outline { @apply btn border border-text bg-transparent text-text hover:bg-surface-muted; }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
+  /* Labels / chips (genre, mood tags…) */
+  .chip-neutral { @apply chip bg-surface-muted text-text; }
+  .chip-strong  { @apply chip bg-strong text-on-strong; }
+  .chip-primary { @apply chip bg-primary text-on-primary; }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
+  /* Inputs: the faint ones in the guide are treated as :disabled */
+  .input-outline { @apply input border border-border bg-surface-muted text-text; }
+  .input-filled  { @apply input bg-surface-muted text-text; }
+  .input-strong  { @apply input bg-strong text-on-strong placeholder:text-on-strong/80; }
+  .input-primary { @apply input bg-primary text-on-primary placeholder:text-on-primary/80; }
 
-body {
-  margin: 0;
-}
+  /* Search: wrap an icon + .input-* in .search */
+  .search { @apply relative flex items-center; }
+  .search > svg { @apply pointer-events-none absolute left-4 size-5; }
+  .search > .input { @apply pl-11; }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  /* Cards */
+  .card         { @apply rounded-card border border-card-border bg-surface p-6 text-text; }
+  .card-primary { @apply rounded-card border border-primary bg-primary p-6 text-on-primary; }
 }

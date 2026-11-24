@@ -1,0 +1,12 @@
+$kind: collection
+auth:
+  - id: 1d5c307d-3184-46e8-8530-7fd8c193d840
+    type: oauth2
+    name: OAuth 2.0
+    credentials:
+      addTokenTo: header
+      accessTokenUrl: https://accounts.spotify.com/api/token
+      clientId: "{{client_id}}"
+      clientSecret: "{{vault:spotify-client-secret}}"
+      grant_type: client_credentials
+      tokenName: spotify-app-token

@@ -1,0 +1,4 @@
+name: Spotify
+values:
+  - key: client_id
+    value: ''

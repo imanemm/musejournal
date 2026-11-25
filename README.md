@@ -6,8 +6,6 @@ MuseJournal is a private music journal. Write a memory, tag how you felt, attach
 
 **Status:** In active development.
 
-<!-- Live demo link and "Try the demo" GIF go here once deployed (M0 / M6). -->
-
 ## Planned features (MVP)
 
 - Sign up / log in (email or Google) and a one-click **demo mode**

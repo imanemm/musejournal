@@ -137,6 +137,9 @@
   .btn-outline {
     @apply btn border border-text bg-transparent text-text hover:bg-surface-muted;
   }
+  .btn-ghost {
+    @apply btn bg-transparent text-text hover:bg-text/10;
+  }
 
   /* Labels / chips (genre, mood tags…) */
   .chip-neutral {

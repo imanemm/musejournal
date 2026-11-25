@@ -63,13 +63,21 @@
    bg-page-gradient   → full pages: marketing, auth, 404, onboarding
                         (stays put while content scrolls, never tiles) */
 @utility bg-brand-gradient {
-  background-image: linear-gradient(to bottom, var(--gradient-from), var(--gradient-to));
+  background-image: linear-gradient(
+    to bottom,
+    var(--gradient-from),
+    var(--gradient-to)
+  );
   color: var(--on-gradient);
 }
 @utility bg-page-gradient {
   min-height: 100dvh;
   background-color: var(--gradient-from);
-  background-image: linear-gradient(to bottom, var(--gradient-from), var(--gradient-to));
+  background-image: linear-gradient(
+    to bottom,
+    var(--gradient-from),
+    var(--gradient-to)
+  );
   background-attachment: fixed;
   color: var(--on-gradient);
 }
@@ -100,11 +108,21 @@
   body {
     @apply bg-bg font-sans text-body text-text antialiased;
   }
-  h1 { @apply text-h1; }
-  h2 { @apply text-h2; }
-  h3 { @apply text-h3; }
-  h4 { @apply text-h4; }
-  h5 { @apply text-h5; }
+  h1 {
+    @apply text-h1;
+  }
+  h2 {
+    @apply text-h2;
+  }
+  h3 {
+    @apply text-h3;
+  }
+  h4 {
+    @apply text-h4;
+  }
+  h5 {
+    @apply text-h5;
+  }
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-accent;
   }
@@ -113,26 +131,54 @@
 /* ---------- Components from the style guide ---------- */
 @layer components {
   /* Buttons */
-  .btn-primary { @apply btn bg-primary text-on-primary hover:brightness-95; }
-  .btn-outline { @apply btn border border-text bg-transparent text-text hover:bg-surface-muted; }
+  .btn-primary {
+    @apply btn bg-primary text-on-primary hover:brightness-95;
+  }
+  .btn-outline {
+    @apply btn border border-text bg-transparent text-text hover:bg-surface-muted;
+  }
 
   /* Labels / chips (genre, mood tags…) */
-  .chip-neutral { @apply chip bg-surface-muted text-text; }
-  .chip-strong  { @apply chip bg-strong text-on-strong; }
-  .chip-primary { @apply chip bg-primary text-on-primary; }
+  .chip-neutral {
+    @apply chip bg-surface-muted text-text;
+  }
+  .chip-strong {
+    @apply chip bg-strong text-on-strong;
+  }
+  .chip-primary {
+    @apply chip bg-primary text-on-primary;
+  }
 
   /* Inputs: the faint ones in the guide are treated as :disabled */
-  .input-outline { @apply input border border-border bg-surface-muted text-text; }
-  .input-filled  { @apply input bg-surface-muted text-text; }
-  .input-strong  { @apply input bg-strong text-on-strong placeholder:text-on-strong/80; }
-  .input-primary { @apply input bg-primary text-on-primary placeholder:text-on-primary/80; }
+  .input-outline {
+    @apply input border border-border bg-surface-muted text-text;
+  }
+  .input-filled {
+    @apply input bg-surface-muted text-text;
+  }
+  .input-strong {
+    @apply input bg-strong text-on-strong placeholder:text-on-strong/80;
+  }
+  .input-primary {
+    @apply input bg-primary text-on-primary placeholder:text-on-primary/80;
+  }
 
   /* Search: wrap an icon + .input-* in .search */
-  .search { @apply relative flex items-center; }
-  .search > svg { @apply pointer-events-none absolute left-4 size-5; }
-  .search > .input { @apply pl-11; }
+  .search {
+    @apply relative flex items-center;
+  }
+  .search > svg {
+    @apply pointer-events-none absolute left-4 size-5;
+  }
+  .search > .input {
+    @apply pl-11;
+  }
 
   /* Cards */
-  .card         { @apply rounded-card border border-card-border bg-surface p-6 text-text; }
-  .card-primary { @apply rounded-card border border-primary bg-primary p-6 text-on-primary; }
+  .card {
+    @apply rounded-card border border-card-border bg-surface p-6 text-text;
+  }
+  .card-primary {
+    @apply rounded-card border border-primary bg-primary p-6 text-on-primary;
+  }
 }

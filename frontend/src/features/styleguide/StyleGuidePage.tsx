@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { ThemeToggle } from "../../components/ui/ThemeToggle";
 
-export function StyleGuidePage() {
+export function StyleguidePage() {
   return (
     <main className="mx-auto flex max-w-5xl flex-col gap-12 p-8">
       <header className="flex flex-wrap items-center justify-between gap-4">
